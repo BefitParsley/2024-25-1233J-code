@@ -8,9 +8,22 @@
 /*----------------------------------------------------------------------------*/
 
 // ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// leftStack            motor_group   1, 2            
+// leftMotor            motor         3               
+// rightStack           motor_group   4, 5            
+// rightMotor           motor         6               
+// Intake               motor         7               
+// Controller1          controller                    
+// Mogo                 digital_out   A               
+// Inertial8            inertial      8               
+// Horizontal           rotation      9               
+// Vertical             rotation      10              
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
+#include "Functions.h"
 
 using namespace vex;
 
@@ -74,6 +87,7 @@ void usercontrol(void) {
     // Insert user code here. This is where you use the joystick values to
     // update your motors, etc.
     // ........................................................................
+    tankDrive();
 
     wait(20, msec); // Sleep the task for a short amount of time to
                     // prevent wasted resources.
